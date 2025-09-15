@@ -4,9 +4,9 @@ version = "0.0.0"
 description = "APIs and MCP Server for Enterprise Apps like Google, Notion, Hubspot..."
 readme = "README.md"
 authors = [
-    { name = "copilot-swe-agent[bot]", email = "198982749+Copilot@users.noreply.github.com" }
+    { name = "Aniket Maurya", email = "aniket@celesto.ai" }
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
     "dotenv>=0.9.9",
     "pydantic>=2.11.9",
