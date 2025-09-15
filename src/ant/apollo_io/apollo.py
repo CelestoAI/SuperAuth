@@ -12,6 +12,10 @@ class _Base:
     def base_url(self) -> str:
         return self._parent_cls.BASE_URL
 
+    @property
+    def session(self) -> requests.Session:
+        return self._parent_cls.session
+
 
 class Contact(_Base):
 
@@ -25,6 +29,10 @@ class Contact(_Base):
             page: Page number to retrieve (starts at 1, default: 1)
         """
 
+        if per_page > 100 or per_page < 1:
+            raise ValueError("per_page must be less than or equal to 100")
+        if page > 500 or page < 1:
+            raise ValueError("page must be less than or equal to 500")
         
         base_url = join_url(self.base_url, "contacts/search")
         query_params = urlencode({
@@ -33,9 +41,8 @@ class Contact(_Base):
             "page": page
         })
         url = f"{base_url}?{query_params}"
-        
-        # Send POST request without params argument
-        response = requests.post(url, headers=self._parent_cls.headers)
+
+        response = self.session.post(url)
         return response.json()
 
     def list_all_stages(self) -> dict:
@@ -45,7 +52,7 @@ class Contact(_Base):
         Ref: https://docs.apollo.io/reference/list-contact-stages
         """
         url = join_url(self.base_url, "contact_stages")
-        response = requests.get(url, headers=self._parent_cls.headers)
+        response = self.session.get(url)
         return response.json()
 
 
@@ -54,11 +61,12 @@ class Apollo:
 
     def __init__(self, api_key: Optional[str] = None): 
         self.api_key = api_key or config.apollo_api_key.get_secret_value()
-        self.headers = {
+        headers = {
             "accept": "application/json",
             "Cache-Control": "no-cache",
             "Content-Type": "application/json",
             "x-api-key": self.api_key
         }
-
+        self.session = requests.Session()
+        self.session.headers.update(headers)
         self.contact = Contact(self)

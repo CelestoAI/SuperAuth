@@ -1,6 +1,3 @@
-from dotenv import load_dotenv
+from ant.apollo_io import Apollo
 
-load_dotenv()
-
-def hello() -> str:
-    return "Hello from ant!"
+__all__ = ["Apollo"]
