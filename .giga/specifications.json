@@ -1,0 +1,18 @@
+[
+  {
+    "fileName": "main-overview.mdc",
+    "description": "Complete system overview focusing on the Apollo.io API wrapper architecture and key components"
+  },
+  {
+    "fileName": "apollo-data-models.mdc",
+    "description": "Documentation of the Apollo and Contact class hierarchies, their relationships, and data structures used for API interactions"
+  },
+  {
+    "fileName": "contact-search-flow.mdc",
+    "description": "Detailed documentation of the contact search implementation, including pagination logic, constraints, and parameter handling"
+  },
+  {
+    "fileName": "stage-management-flow.mdc",
+    "description": "Documentation of the contact stage management system, including hierarchy and state transitions"
+  }
+]
