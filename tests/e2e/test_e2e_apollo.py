@@ -1,4 +1,4 @@
-from ant.apollo_io import Apollo
+from superauth.apollo_io import Apollo
 import json
 
 def test_apollo():
