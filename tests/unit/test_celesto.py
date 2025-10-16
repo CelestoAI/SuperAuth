@@ -1,6 +1,6 @@
-from ant.celesto.crm.contacts import CelestoCRMContacts
+from superauth.celesto.crm.contacts import CelestoCRMContacts
 from dotenv import load_dotenv
-from ant.config import config
+from superauth.config import config
 load_dotenv()
 
 def test_celesto_crm_contacts():

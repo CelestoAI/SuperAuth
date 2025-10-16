@@ -2,7 +2,7 @@ from typing import Optional
 
 import httpx
 
-from ant.celesto.base import CelestoSDKBase
+from superauth.celesto.base import CelestoSDKBase
 
 
 class CelestoCRMContacts(CelestoSDKBase):
