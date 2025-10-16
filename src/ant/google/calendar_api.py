@@ -85,7 +85,7 @@ def _credentials_have_write_access(creds: Credentials) -> bool:
     return False
 
 
-class CalendarService:
+class CalendarAPI:
     """
     Google Calendar integration with Google OAuth2 credentials.
     Accepts either Credentials or CredentialRecord objects.
