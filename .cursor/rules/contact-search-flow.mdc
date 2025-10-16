@@ -1,38 +1,62 @@
 ---
-description: Defines the contact search workflow implementation including pagination, constraints and Apollo.io integration
+description: Specifications for contact search functionality including pagination, filtering, and result handling
 ---
 
-
-# contact-search-flow
-
+# === USER INSTRUCTIONS ===
+description: Defines the contact search workflow implementation including pagination, constraints and Apollo.io integration
 The contact search implementation enforces specific business rules and constraints when interacting with Apollo.io's contact search functionality:
-
 ## Search Constraints
 - Page size limits strictly enforced between 1-100 contacts per page
 - Maximum search depth capped at 500 pages total
 - Structured parameter validation for contact queries
-
 ## Contact Stage Integration
 - Integrates with Apollo.io's hierarchical contact stage system 
 - Manages contact stage transitions and state
 - Enforces valid stage progression rules
-
 ## Query Parameter Handling
 - Domain-specific parameter validation
 - Business rule enforcement for search criteria
 - Structured error handling for API limitations
-
 ## Core Components
 `src/ant/apollo_io/apollo.py`:
 - Implements Apollo.io contact search business rules
 - Manages pagination constraints
 - Handles contact stage workflow
-
 Importance Score: 35/100
 - Implements specific Apollo.io business requirements
 - Focused on API integration with business constraints
 - Limited complex domain logic or unique algorithms
 - Basic parameter validation with business-specific rules
+# === END USER INSTRUCTIONS ===
+
+# contact-search-flow
+
+The contact search implementation consists of the following key components:
+
+## Search Parameters and Filtering (Importance: 85/100)
+- Located in `src/superauth/apollo_io/apollo.py`
+- Custom contact search logic integrating with Apollo.io API
+- Specialized handling of search criteria including:
+  - Organization filters 
+  - Contact role/title matching
+  - Industry-specific parameters
+
+## Pagination Handler (Importance: 75/100)
+- Located in `src/superauth/celesto/crm/contacts.py`
+- Custom cursor-based pagination implementation
+- Business rules for result set limits and page sizes
+- Stateful pagination tracking across search sessions
+
+## Contact Result Processing (Importance: 80/100)
+- Domain-specific normalization of contact data
+- Contact deduplication based on business rules
+- Custom field mapping between Apollo data and internal CRM format
+
+## Search Flow Constraints (Importance: 70/100)
+- Rate limiting enforcement
+- Search quota management per organization
+- Result filtering based on organization permissions
+- Contact enrichment rules based on search context
 
 $END$
 

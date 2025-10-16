@@ -1,39 +1,79 @@
 ---
-description: Documentation of Apollo.io data models, contact management, and API interaction structures
+description: Data models and class hierarchies for Apollo.io API integration and contact management
 ---
 
-
-# apollo-data-models
-
+# === USER INSTRUCTIONS ===
+description: Documentation of Apollo.io data models, contact management, and API interaction structures
 ## Core Data Structures
-
 ### Apollo Class Hierarchy
 - Parent class managing API authentication and core Apollo.io interactions
 - Handles domain-specific constraints for Apollo.io API access
 - Enforces business rules for pagination (1-100 per page, max 500 pages)
-
 ### Contact Management Model
 - Contact class implementing Apollo.io's contact stage system
 - Structured query parameter handling for contact search operations
 - Parent-child relationship with Apollo base class for authentication inheritance
-
 ## Business Domain Logic
-
 ### Contact Search Implementation
 - Domain-specific contact search with Apollo.io constraints
 - Structured parameter validation for Apollo.io's API requirements
 - Contact stage hierarchy management and state transitions
-
 ### Domain Authentication
 - Apollo.io-specific authentication handling
 - Business domain error boundaries for API limitations
 - Integrated access control for contact management operations
-
 Importance Score: 35/100
 - Implements Apollo.io's specific business requirements
 - Provides structured interface for domain operations
 - Focuses on API integration with business constraints
 - Limited complex domain-specific processing
+# === END USER INSTRUCTIONS ===
+
+# apollo-data-models
+
+## Core Data Models
+
+### ApolloContact Class
+Primary data structure for representing Apollo.io contacts with:
+- Contact lifecycle stage management 
+- Workflow state transitions
+- Custom field mappings for CRM integration
+Importance Score: 85/100
+
+### ContactBase Class
+Abstract base class defining:
+- Required contact properties 
+- Field validation rules
+- Status tracking for sync operations
+Importance Score: 80/100
+
+### ContactHierarchy
+Class relationship structure:
+```
+ContactBase
+  └── ApolloContact
+      └── EnrichedContact
+```
+Enforces data consistency across contact operations
+Importance Score: 75/100
+
+## Integration Models
+
+### ContactSync
+Data model handling:
+- Bidirectional contact field mapping
+- Change tracking between Apollo and CRM
+- Conflict resolution rules
+Importance Score: 70/100
+
+### WorkflowStages
+Defines contact progression through:
+- Initial prospect
+- Qualification
+- Enrichment
+- Active engagement
+- Archived
+Importance Score: 65/100
 
 $END$
 

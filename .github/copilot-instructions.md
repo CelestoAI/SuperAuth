@@ -1,22 +1,8 @@
-# === USER INSTRUCTIONS ===
-The project implements an Apollo.io API integration layer with two primary business components:
-## Contact Search Management
-Located in `src/ant/apollo_io/apollo.py`, this component:
-- Enforces domain-specific pagination rules (1-100 contacts per page)
-- Implements maximum depth constraints of 500 pages
-- Handles structured contact search parameters
-- Maintains business-domain authentication context
-## Contact Stage System
-The contact stage management system provides:
-- Integration with Apollo.io's hierarchical stage organization
-- Stage transition handling
-- Contact stage status tracking
-## Business Logic Score: 35/100
-The implementation primarily serves as a structured API wrapper with basic business constraints and validation rules. While it enforces specific Apollo.io business requirements, it contains limited complex domain logic or unique business algorithms.
-# === END USER INSTRUCTIONS ===
-
 
 # main-overview
+
+> **Giga Operational Instructions**
+> Read the relevant Markdown inside `.cursor/rules` before citing project context. Reference the exact file you used in your response.
 
 ## Development Guidelines
 
