@@ -1,6 +1,6 @@
-# ant 🐜
+# SuperAuth 🐜
 
-Simplest way to use APIs for your enterprise apps and services like Google, Notion, Hubspot, Apollo, etc. 🚀
+Simplest way to use authenticate enterprise apps and services like Google, Notion, Hubspot, Apollo, etc. 🚀
 
 MCP server coming soon.
 
@@ -11,7 +11,7 @@ MCP server coming soon.
 Install the latest version:
 
 ```bash
-pip install git+https://github.com/celestoai/ant.git
+pip install git+https://github.com/celestoai/SuperAuth.git
 ```
 
 Setup your API keys in the environment variables:
@@ -26,7 +26,7 @@ APOLLO_API_KEY=your_apollo_api_key
 Find contacts in your Apollo.io account by keywords.
 
 ```python
-from ant.apollo_io import Apollo
+from superauth.apollo_io import Apollo
 
 apollo = Apollo()
 response = apollo.contact.search("John Doe")
@@ -38,7 +38,7 @@ print(response)
 Authenticate Gmail or Google Calendar to read, and send emails or send a calendar invite.
 
 ```python
-from ant.google import GmailAPI, load_user_credentials
+from superauth.google import GmailAPI, load_user_credentials
 
 # Load your saved credentials
 creds = load_user_credentials("credentials.my_google_account.json")

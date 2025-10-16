@@ -1,5 +1,5 @@
 [project]
-name = "ant"
+name = "superauth"
 version = "0.0.1"
 description = "APIs and MCP Server for Enterprise Apps like Google, Notion, Hubspot..."
 readme = "README.md"
