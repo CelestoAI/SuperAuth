@@ -1,7 +1,7 @@
-from ant.apollo_io.apollo import Apollo
+from superauth.apollo_io.apollo import Apollo
 
 # import requests
-# from ant.config import config
+# from superauth.config import config
 
 
 # url = "https://api.apollo.io/api/v1/opportunities/search"

@@ -3,8 +3,8 @@ from urllib.parse import urlencode
 
 import requests
 
-from ant.config import config
-from ant.utils import join_url
+from superauth.config import config
+from superauth.utils import join_url
 
 
 class _Base:
