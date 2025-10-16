@@ -1,11 +1,11 @@
 [project]
 name = "superauth"
-version = "0.0.1"
 description = "APIs and MCP Server for Enterprise Apps like Google, Notion, Hubspot..."
 readme = "README.md"
 authors = [
     { name = "Aniket Maurya", email = "aniket@celesto.ai" }
 ]
+dynamic = ["version"]
 requires-python = ">=3.10"
 dependencies = [
     "backoff>=2.2.1",
@@ -21,8 +21,11 @@ dependencies = [
 ]
 
 [build-system]
-requires = ["uv_build>=0.8.17,<0.9.0"]
-build-backend = "uv_build"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/superauth/__init__.py"
 
 [dependency-groups]
 dev = [
