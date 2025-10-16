@@ -1,4 +1,4 @@
-# SuperAuth 🐜
+# SuperAuth
 
 Simplest way to use authenticate enterprise apps and services like Google, Notion, Hubspot, Apollo, etc. 🚀
 
@@ -8,7 +8,18 @@ MCP server coming soon.
 
 ### Install
 
-Install the latest version:
+**Recommended:**
+
+The recommended method of installing `SuperAuth` is with pip from PyPI.
+
+```bash
+pip install superauth
+```
+
+**Latest:**
+
+You can also install the latest bleeding edge version (could be unstable) of `SuperAuth`, should you feel motivated enough, as follows:
+
 
 ```bash
 pip install git+https://github.com/celestoai/SuperAuth.git
